@@ -27,7 +27,7 @@ Voici le modèle de données.
    
    Par example s'il y a trois notes pour une matière les poids peuvent être 0.2 0.3 et 0.5 ou encore 4, 4 et 2
 8. Le champs `Grade.value` représente la note, elle n'est pas modifiable.
-9. La relation `Student.grades` peut se faire en cascade pour l'enregistrement des données
+9. La relation `Student.stations` peut se faire en cascade pour l'enregistrement des données
    (pas besoin de sauver une note avant de l'ajouter à un étudiant)
 
 ## Ce qui est déjà fait
