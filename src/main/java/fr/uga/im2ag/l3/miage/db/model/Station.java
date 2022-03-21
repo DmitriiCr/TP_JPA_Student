@@ -1,17 +1,18 @@
 package fr.uga.im2ag.l3.miage.db.model;
 
 
-import javax.annotation.processing.Generated;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
+@NamedQueries(
+        @NamedQuery( name = "get-all-stations" , query="SELECT s from Station s"
+)
+)
 public class Station {
     @Id
+    @GeneratedValue
     private Long id ;
 
     private String adresse ;
@@ -33,11 +34,27 @@ public class Station {
         return adresse;
     }
 
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public Statut getStatus() {
+        return status;
+    }
+
+    public List<Bornette> getContient() {
+        return Contient;
+    }
+
+    public void setContient(List<Bornette> contient) {
+        Contient = contient;
+    }
+
     public void setStatus(Statut status) {
         this.status = status;
     }
 
-    public void setStatut(String adresse) {
+    public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
 }

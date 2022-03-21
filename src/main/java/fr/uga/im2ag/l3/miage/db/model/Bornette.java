@@ -1,21 +1,30 @@
 package fr.uga.im2ag.l3.miage.db.model;
 
+import javax.persistence.*;
+;
+
+@Entity
 public class Bornette {
 
-
-    private int numeroBorn;
+    @Id
+    @GeneratedValue
+    private Long numeroBorn;
     private Etat etat;
-
+    @OneToOne
     private velo Propose ;
     private boolean estPresent;
 
-    public int getNumeroBorn() {
-        return numeroBorn;
+    public Bornette( Etat etat, velo propose, boolean estPresent) {
+        this.numeroBorn = numeroBorn;
+        this.etat = etat;
+        Propose = propose;
+        this.estPresent = estPresent;
     }
 
-    public void setNumeroBorn(int numeroBorn) {
-        this.numeroBorn = numeroBorn;
+    public Bornette() {
+
     }
+
 
     public Etat getEtat() {
         return etat;
@@ -31,5 +40,13 @@ public class Bornette {
 
     public void setPropose(velo propose) {
         Propose = propose;
+    }
+
+    public boolean isEstPresent() {
+        return estPresent;
+    }
+
+    public void setEstPresent(boolean estPresent) {
+        this.estPresent = estPresent;
     }
 }

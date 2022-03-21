@@ -22,6 +22,11 @@ class LocationTest extends Base {
             entityManager.getTransaction().rollback();
         }
     }
+    @Test
+    void shouldSaveLocation(){
+
+    }
+
 
 
 
